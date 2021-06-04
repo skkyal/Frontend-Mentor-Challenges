@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Stats preview card component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: hsl(233, 47%, 7%);
+      }
+      .main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .container {
+        display: flex;
+        margin: 10vh;
+        background-color: hsl(244, 38%, 16%);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .text {
+        color: hsl(0, 0%, 100%);
+        width: 50%;
+        height: 100%;
+        padding: 50px;
+      }
+      .image {
+        background-image: url("images/image-header-desktop.jpg");
+        background-color: hsl(277, 64%, 61%);
+        background-blend-mode: multiply;
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 50vh;
+        min-width: 50%;
+      }
+      .heading {
+        color: hsl(0, 0%, 100%);
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 40px;
+        padding: 10px 0;
+      }
+      .heading span {
+        color: hsl(277, 64%, 61%);
+      }
+      .card-body {
+        color: hsla(0, 0%, 100%, 0.75);
+        font-family: "Lexend Deca", sans-serif;
+        padding: 15px 0px;
+        line-height: 180%;
+      }
+      .stats {
+        padding: 80px 0 0 0;
+        font-family: "Inter", sans-serif;
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+      }
+      .stats > div {
+        padding-right: 10%;
+      }
+      .nums {
+        font-size: 30px;
+        font-weight: 700;
+        padding-bottom: 2px;
+      }
+      .temp {
+        color: hsla(0, 0%, 100%, 0.6);
+        text-transform: uppercase;
+        font-size: 15px;
+      }
+      @media screen and (max-width: 930px) {
+        .container {
+          flex-wrap: wrap;
+        }
+        .text {
+          order: 2;
+          width: 100%;
+        }
+        .image {
+          background-image: url("images/image-header-mobile.jpg");
+          order: 1;
+          width: 100%;
+        }
+        .stats {
+          flex-direction: column;
+        }
+        .text {
+          text-align: center;
+        }
+        .stats > div {
+          padding-right: 0%;
+          padding-bottom: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="container">
+        <div class="text">
+          <div class="heading">
+            Get <span>insights</span> that help your business grow.
+          </div>
+          <div class="card-body">
+            Discover the benefits of data analytics and make better decisions
+            regarding revenue, customer experience, and overall efficiency.
+          </div>
+          <div class="stats">
+            <div>
+              <div class="nums">10k+</div>
+              <div class="temp">companies</div>
+            </div>
+            <div>
+              <div class="nums">314</div>
+              <div class="temp">templates</div>
+            </div>
+            <div>
+              <div class="nums">12m+</div>
+              <div class="temp">queries.</div>
+            </div>
+          </div>
+        </div>
+        <div class="image"></div>
+      </div>
+    </div>
+  </body>
+</html>
