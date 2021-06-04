@@ -24,6 +24,7 @@ Users should be able to:
 ### Links
 
 - Live Site URL: https://basic-card-shlok.netlify.app/
+- Solution : https://www.frontendmentor.io/solutions/using-html-and-css-Sa_-j6Mpz
 
 ## My process
 
