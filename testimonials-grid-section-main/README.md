@@ -23,7 +23,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution URL](https://your-solution-url.com)
+- Solution URL: [Solution URL](https://www.frontendmentor.io/solutions/html-css-MpUdy9j1H)
 - Live Site URL: [Live Site URL](https://testimonials-grid-section-shlok.netlify.app/)
 
 ## My process
