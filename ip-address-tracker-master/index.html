@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | IP Address Tracker</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Rubik", sans-serif;
+        background-color: rgb(20, 5, 158);
+      }
+      .full {
+        height: 100%;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: max-content 70vh;
+      }
+      .header {
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-size: 30px;
+        font-weight: 500;
+        padding: 30px;
+      }
+      .upperhalf {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        background-image: url("images/pattern-bg.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+
+      /*searchbar*/
+      #search {
+        border: none;
+        width: 80%;
+        padding: 0 5% 0 5%;
+        min-height: 100%;
+        font-size: 18px;
+      }
+      #button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background-color: black;
+        border: none;
+        cursor: pointer;
+        width: 10%;
+        min-height: 100%;
+      }
+      .searchbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: 50px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 0 20px 0 20px;
+      }
+
+      /*details*/
+      .details {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: max-content;
+        width: 70%;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 10px 10px 30px 2px hsl(0, 0%, 59%);
+        z-index: 50;
+        transform: translateY(50%);
+      }
+      .rec {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .content {
+        padding: 20px;
+      }
+      .heading {
+        text-transform: uppercase;
+        color: hsl(0, 0%, 59%);
+        font-weight: 500;
+        font-size: 14px;
+      }
+      .vertical-line {
+        border-left: 1px solid hsl(0, 0%, 70%);
+        height: 50%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #a1,
+      #a2,
+      #a3,
+      #a4 {
+        font-size: 20px;
+        padding: 10px 0;
+        color: hsl(0, 0%, 17%);
+        font-weight: 700;
+      }
+
+      textarea:focus,
+      input:focus {
+        outline: none;
+      }
+      /*map*/
+      #mapid {
+        z-index: 20;
+      }
+
+      @media screen and (max-width: 800px) {
+        .searchbar {
+          width: 70%;
+        }
+        .details {
+          margin: 0;
+          text-align: center;
+          grid-template-columns: 100%;
+          grid-template-rows: 1fr 1fr 1fr 1fr;
+          margin: -23% 0 0 0;
+        }
+        .vertical-line {
+          display: none;
+        }
+        .full {
+          grid-template-rows: max-content 90vh;
+        }
+      }
+      @media screen and (max-width: 460px) {
+        .searchbar {
+          width: 100%;
+        }
+        .details {
+          width: 90%;
+          margin: -40% 0 0 0;
+        }
+        #button {
+          width: 18%;
+        }
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+  </head>
+  <body>
+    <!--IP Address Tracker-->
+    <!-- add offset value dynamically using the API -->
+    <div class="full">
+      <div class="upperhalf">
+        <div class="header">IP Address Tracker</div>
+        <div class="searchbar">
+          <input
+            id="search"
+            type="text"
+            placeholder="Search for any IP address or domain"
+          />
+          <button id="button" onclick="getDetails()">
+            <!--onclick="return getDetails()"-->
+            <img alt="" src="images/icon-arrow.svg" />
+          </button>
+        </div>
+
+        <div class="details">
+          <div class="rec">
+            <div class="content">
+              <div class="heading">IP Address</div>
+              <div id="a1"></div>
+            </div>
+          </div>
+          <div class="rec">
+            <div class="vertical-line"></div>
+            <div class="content">
+              <div class="heading">Location</div>
+              <div id="a2"></div>
+            </div>
+          </div>
+          <div class="rec">
+            <div class="vertical-line"></div>
+            <div class="content">
+              <div class="heading">Timezone</div>
+              <div id="a3"></div>
+            </div>
+          </div>
+          <div class="rec">
+            <div class="vertical-line"></div>
+            <div class="content">
+              <div class="heading">ISP</div>
+              <div id="a4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="mapid"></div>
+    </div>
+    <script src="key.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
