@@ -133,39 +133,149 @@ body {
 .cat-2 {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto auto;
-      grid-template-columns: auto auto auto;
-  padding-top: 50px;
+  -ms-grid-columns: auto 15px auto 15px auto;
+      grid-template-columns: auto 15px auto 15px auto;
+  margin: 100px 0px;
+}
+
+.cat-2 .line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cat-2 .line div {
+  height: 8px;
+  width: 100%;
+  background-color: #2acfcf;
+  border: none;
+}
+
+.cat-2 .card-img {
+  display: absolute;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 50%;
+  background-color: #3b3054;
+  margin-top: -40px;
+}
+
+.cat-2 .card-img img {
+  text-align: center;
+  line-height: 100px;
+  vertical-align: middle;
+  padding: 20px;
 }
 
 .cat-2 .card-1 {
+  display: relative;
   background-color: white;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   border-radius: 5px;
-  padding: 24px;
-  margin: 10px;
+  padding: 0 28px 28px 28px;
 }
 
 .cat-2 .card-2 {
+  display: relative;
   background-color: white;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   border-radius: 5px;
-  padding: 24px;
-  margin: 10px;
+  padding: 0 28px 28px 28px;
+  margin-top: 50px;
 }
 
 .cat-2 .card-3 {
+  display: relative;
   background-color: white;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   border-radius: 5px;
-  padding: 24px;
-  margin: 10px;
+  padding: 0 28px 28px 28px;
+  margin-top: 100px;
 }
 
 .cat-2 .head-1 {
   font-weight: 700;
   font-size: 1.1rem;
+  padding: 15px 0px;
 }
 
 .cat-2 .desc-1 {
   font-size: 0.95rem;
   color: #9e9aa7;
+}
+
+.section-2 {
+  padding: 50px 5%;
+  text-align: center;
+  background: url("../images/bg-boost-desktop.svg"), #3b3054;
+  background-size: cover;
+}
+
+.section-2 .div-1 {
+  font-weight: 700;
+  color: White;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+.section-2 .div-2 {
+  background-color: #2acfcf;
+  color: white;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.section-2 .div-2:hover {
+  background-color: #93f0f0;
+}
+
+.section-3 {
+  background-color: #232127;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+}
+
+.section-3 .menus {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+}
+
+.section-3 .menus ul {
+  list-style-type: none;
+}
+
+.section-3 .menus li {
+  color: #bfbfbf;
+}
+
+.section-3 .menus .li-head {
+  color: white;
+  font-weight: 700;
+}
+
+.section-3 img {
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */

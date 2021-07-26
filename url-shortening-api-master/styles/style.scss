@@ -25,13 +25,6 @@ $VeryDarkViolet: hsl(260, 8%, 14%);
   color: white;
 }
 
-@mixin card {
-  background-color: white;
-  border-radius: 5px;
-  padding: 24px;
-  margin: 10px;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -128,25 +121,109 @@ body {
   }
 }
 
+@mixin card {
+  display: relative;
+  background-color: white;
+  height: fit-content;
+  border-radius: 5px;
+  padding: 0 28px 28px 28px;
+  // margin: 15px;
+}
+
 .cat-2 {
   display: grid;
-  grid-template-columns: auto auto auto;
-  padding-top: 50px;
+  grid-template-columns: auto 15px auto 15px auto;
+  margin: 100px 0px;
+  .line {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    div {
+      height: 8px;
+      width: 100%;
+      background-color: $Cyan;
+      border: none;
+    }
+  }
+  .card-img {
+    display: absolute;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 50%;
+    background-color: $DarkViolet;
+    margin-top: -40px;
+    //top: -25%;
+    img {
+      text-align: center;
+      line-height: 100px;
+      vertical-align: middle;
+      padding: 20px;
+    }
+  }
   .card-1 {
     @include card;
   }
   .card-2 {
     @include card;
+    margin-top: 50px;
   }
   .card-3 {
     @include card;
+    margin-top: 100px;
   }
   .head-1 {
     font-weight: 700;
     font-size: 1.1rem;
+    padding: 15px 0px;
   }
   .desc-1 {
     font-size: 0.95rem;
     color: $GrayishViolet;
+  }
+}
+
+.section-2 {
+  padding: 50px 5%;
+  text-align: center;
+  background: url("../images/bg-boost-desktop.svg"), $DarkViolet;
+  background-size: cover;
+  .div-1 {
+    font-weight: 700;
+    color: White;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+  .div-2 {
+    @include button;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    &:hover {
+      background-color: $LightCyan;
+    }
+  }
+}
+
+.section-3 {
+  background-color: $VeryDarkViolet;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  .menus {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    ul {
+      list-style-type: none;
+    }
+    li {
+      color: $Gray;
+    }
+    .li-head {
+      color: white;
+      font-weight: 700;
+    }
+  }
+  img {
+    color: white;
   }
 }
