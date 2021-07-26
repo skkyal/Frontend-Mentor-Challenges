@@ -1,0 +1,152 @@
+$fontStack: "Poppins", sans-serif;
+$fontSize: 18px;
+
+//Primary
+$Cyan: hsl(180, 66%, 49%);
+$LightCyan: hsl(180, 76%, 76%);
+$DarkViolet: hsl(257, 27%, 26%);
+
+//Secondary
+$Red: hsl(0, 87%, 67%);
+
+//Neutral
+$Gray: hsl(0, 0%, 75%);
+$GrayishViolet: hsl(257, 7%, 63%);
+$VeryDarkBlue: hsl(255, 11%, 22%);
+$VeryDarkViolet: hsl(260, 8%, 14%);
+
+@mixin center-content {
+  display: flex;
+  align-items: center;
+}
+
+@mixin button {
+  background-color: $Cyan;
+  color: white;
+}
+
+@mixin card {
+  background-color: white;
+  border-radius: 5px;
+  padding: 24px;
+  margin: 10px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $fontStack;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.Navbar {
+  @include center-content;
+  justify-content: space-between;
+  color: $GrayishViolet;
+  padding: 8px 5%;
+  div {
+    @include center-content;
+    div {
+      padding: 12px 16px;
+      cursor: pointer;
+      &:hover {
+        color: $VeryDarkBlue;
+      }
+    }
+  }
+
+  .user {
+    float: right;
+    div {
+      padding: 10px 30px;
+    }
+    .sign-up {
+      @include button;
+      border-radius: 50px;
+      &:hover {
+        background-color: $LightCyan;
+      }
+    }
+  }
+}
+
+.header {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 5% 30px 50px 5%;
+  .heading {
+    font-size: 3rem;
+    font-weight: 700;
+    color: $VeryDarkBlue;
+    margin-bottom: 10px;
+  }
+  .desc {
+    color: $Gray;
+    margin-bottom: 25px;
+  }
+  .button {
+    @include button;
+    display: inline-block;
+    border-radius: 50px;
+    cursor: pointer;
+    &:hover {
+      background-color: $LightCyan;
+    }
+    padding: 10px 20px;
+  }
+  .image {
+    position: relative;
+    right: -20%;
+  }
+  .written-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 12px;
+    margin-right: 12px;
+    margin-left: 12px;
+  }
+}
+
+.section-1 {
+  padding: 8px 5%;
+  background-color: rgb(241, 241, 241);
+}
+
+.cat-1 {
+  text-align: center;
+  padding-top: 100px;
+  .cat-1-1 {
+    font-weight: 700;
+    padding-bottom: 8px;
+    font-size: 1.6rem;
+  }
+  .cat-1-2 {
+    font-size: 0.95rem;
+    color: $GrayishViolet;
+  }
+}
+
+.cat-2 {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding-top: 50px;
+  .card-1 {
+    @include card;
+  }
+  .card-2 {
+    @include card;
+  }
+  .card-3 {
+    @include card;
+  }
+  .head-1 {
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+  .desc-1 {
+    font-size: 0.95rem;
+    color: $GrayishViolet;
+  }
+}
