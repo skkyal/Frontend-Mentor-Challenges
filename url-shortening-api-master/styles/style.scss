@@ -25,6 +25,9 @@ $VeryDarkViolet: hsl(260, 8%, 14%);
   color: white;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   padding: 0;
@@ -107,6 +110,37 @@ body {
   background-color: rgb(241, 241, 241);
 }
 
+.input-error {
+  &::placeholder {
+    color: red;
+  }
+}
+.new-link {
+  border-radius: 8px;
+  background-color: white;
+  padding: 25px;
+  margin-top: 16px;
+
+  .new-link-1 {
+    color: $Cyan;
+    float: right;
+    height: 100%;
+  }
+  .new-link-div {
+    display: inline-block;
+    padding-right: 16px;
+  }
+  .new-link-btn {
+    @include button;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 8px;
+    padding: 3px 30px;
+    &:hover {
+      background-color: $LightCyan;
+    }
+  }
+}
 .shorten-link {
   margin-top: -75px;
   background: url("../images/bg-shorten-desktop.svg"), $VeryDarkViolet;
@@ -125,7 +159,7 @@ body {
       border: none;
       outline: none;
     }
-    margin-right: 24px;
+    // margin-right: 1%;
   }
   div {
     @include button;

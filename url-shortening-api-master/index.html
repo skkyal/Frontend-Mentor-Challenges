@@ -29,6 +29,7 @@
         <div>Pricing</div>
         <div>Resources</div>
       </div>
+      <div></div>
       <div class="user">
         <div>Login</div>
         <div class="sign-up">Sign Up</div>
@@ -42,7 +43,7 @@
             Build your brand’s recognition and get detailed insights on how your
             links are performing.
           </div>
-          <div class="button">Get Started</div>
+          <div class="button" onclick="getStarted()">Get Started</div>
         </div>
       </div>
       <div class="image">
@@ -52,9 +53,10 @@
 
     <div class="section-1">
       <div class="shorten-link">
-        <input type="text" placeholder="Shorten a link here..." />
-        <div>Shorten It!</div>
+        <input type="text" id="link" placeholder="Shorten a link here..." />
+        <div onclick="shorten()">Shorten It!</div>
       </div>
+      <div id="link-list"></div>
       <div>
         <div class="cat-1">
           <div class="cat-1-1">Advanced Statistics</div>
@@ -104,7 +106,7 @@
 
     <div class="section-2">
       <div class="div-1">Boost your links today</div>
-      <div class="div-2">Get Started</div>
+      <div class="div-2" onclick="getStarted()">Get Started</div>
     </div>
 
     <div class="section-3">
@@ -143,5 +145,6 @@
         <div class="ig"></div>
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
