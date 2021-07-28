@@ -24,7 +24,7 @@
   <body>
     <div class="Navbar">
       <div>
-        <div><img src="images/logo.svg" /></div>
+        <div><img src="images/logo.svg" alt="" /></div>
         <div>Features</div>
         <div>Pricing</div>
         <div>Resources</div>
@@ -47,14 +47,17 @@
         </div>
       </div>
       <div class="image">
-        <img src="images/illustration-working.svg" />
+        <img src="images/illustration-working.svg" alt="" />
       </div>
     </div>
 
     <div class="section-1">
       <div class="shorten-link">
-        <input type="text" id="link" placeholder="Shorten a link here..." />
-        <div onclick="shorten()">Shorten It!</div>
+        <div class="s1">
+          <input type="text" id="link" placeholder="Shorten a link here..." />
+          <div class="error-message">Please Enter Valid URL</div>
+        </div>
+        <div class="div-btn" onclick="shorten()">Shorten It!</div>
       </div>
       <div id="link-list"></div>
       <div>
@@ -110,7 +113,7 @@
     </div>
 
     <div class="section-3">
-      <div class="logo"><img src="images/logo-2.svg" /></div>
+      <div class="logo"><img src="images/logo-2.svg" alt="" /></div>
       <div class="menus">
         <div>
           <ul>

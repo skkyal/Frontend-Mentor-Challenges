@@ -135,7 +135,9 @@ body {
     cursor: pointer;
     display: inline-block;
     border-radius: 8px;
-    padding: 3px 30px;
+    width: 100px;
+    text-align: center;
+
     &:hover {
       background-color: $LightCyan;
     }
@@ -145,23 +147,26 @@ body {
   margin-top: -75px;
   background: url("../images/bg-shorten-desktop.svg"), $VeryDarkViolet;
   background-size: cover;
-  padding: 50px;
+  padding: 50px 50px 50px 50px;
   border-radius: 8px;
-  input {
+  .s1 {
     display: inline-block;
+    width: 80%;
+  }
+  input {
     border-radius: 8px;
     border: none;
     padding: 10px 20px;
     font-family: $fontStack;
     font-size: 1rem;
-    width: 80%;
+    width: 100%;
     &:focus {
       border: none;
       outline: none;
     }
     // margin-right: 1%;
   }
-  div {
+  .div-btn {
     @include button;
     cursor: pointer;
     text-align: center;
@@ -172,6 +177,10 @@ body {
     }
     padding: 10px 20px;
     border-radius: 8px;
+  }
+  .error-message {
+    display: none;
+    color: red;
   }
 }
 
