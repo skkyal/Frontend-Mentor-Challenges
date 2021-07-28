@@ -57,7 +57,10 @@
           <input type="text" id="link" placeholder="Shorten a link here..." />
           <div class="error-message">Please Enter Valid URL</div>
         </div>
-        <div class="div-btn" onclick="shorten()">Shorten It!</div>
+        <div class="div-btn" onclick="shorten()">
+          <div id="btn-text">Shorten It!</div>
+          <div id="loader"></div>
+        </div>
       </div>
       <div id="link-list"></div>
       <div>

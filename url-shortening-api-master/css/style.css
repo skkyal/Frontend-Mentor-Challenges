@@ -166,6 +166,16 @@ body {
   background-color: #93f0f0;
 }
 
+.new-link .div-copied {
+  background-color: #3b3054;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 8px;
+  width: 100px;
+  text-align: center;
+}
+
 .shorten-link {
   margin-top: -75px;
   background: url("../images/bg-shorten-desktop.svg"), #232127;
@@ -196,6 +206,15 @@ body {
 .shorten-link .div-btn {
   background-color: #2acfcf;
   color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
   text-align: center;
   width: 10%;
@@ -211,6 +230,40 @@ body {
 .shorten-link .error-message {
   display: none;
   color: red;
+}
+
+.shorten-link #loader {
+  text-align: center;
+  display: none;
+  border: 4px solid White;
+  border-radius: 50%;
+  border-top: 4px solid #3b3054;
+  width: 16px;
+  height: 16px;
+  -webkit-animation: spin 2s linear infinite;
+          animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 .cat-1 {

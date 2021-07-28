@@ -46,10 +46,13 @@ copytext = (ele) => {
   CopyTextToClipboard(copyText);
 
   ele.textContent = "Copied!";
-  ele.style.backgroundColor = "hsl(257, 27%, 26%)";
+  ele.classList.add("div-copied");
+  ele.classList.remove("new-link-btn");
+
   setTimeout(function () {
     ele.textContent = "Copy";
-    ele.style.backgroundColor = "hsl(180, 66%, 49%)";
+    ele.classList.add("new-link-btn");
+    ele.classList.remove("div-copied");
   }, 2000);
 };
 
@@ -80,6 +83,13 @@ function CopyTextToClipboard(text) {
 shorten = async () => {
   const inputEle = document.querySelector("#link");
   const inputText = inputEle.value;
+
+  const btntext = document.querySelector("#btn-text");
+  btntext.textContent = "";
+  const loader = document.querySelector("#loader");
+  loader.style.display = "flex";
+  // console.log(loader);
+
   let url = new URL("https://api.shrtco.de/v2/shorten");
   url.search = new URLSearchParams({ url: inputText }).toString();
 
@@ -87,6 +97,10 @@ shorten = async () => {
     .then((response) => response.json())
     .then((data) => {
       let links = JSON.parse(localStorage.getItem("links"));
+      //console.log(data)
+      if (data.ok == false) {
+        throw "Enter Valid link";
+      }
       if (links) {
         links.push({ original: inputText, short: data.result.short_link });
         localStorage.setItem("links", JSON.stringify(links));
@@ -110,6 +124,8 @@ shorten = async () => {
 
       console.log(err);
     });
+  btntext.textContent = "Shorten it!";
+  loader.style.display = "none";
 
   // console.log("shorten link");
 };
