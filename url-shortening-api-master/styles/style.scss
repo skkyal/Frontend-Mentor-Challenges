@@ -32,7 +32,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: $fontStack;
-  max-width: 100%;
+  width: 100%;
   overflow-x: hidden;
 }
 
@@ -68,20 +68,25 @@ body {
 }
 
 .header {
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: auto auto;
   padding: 5% 5% 10% 5%;
+  overflow: hidden;
   .heading {
+    box-sizing: border-box;
     font-size: 3rem;
     font-weight: 700;
     color: $VeryDarkBlue;
     margin-bottom: 10px;
   }
   .desc {
+    box-sizing: border-box;
     color: $Gray;
     margin-bottom: 25px;
   }
   .button {
+    box-sizing: border-box;
     @include button;
     display: inline-block;
     border-radius: 50px;
@@ -92,14 +97,16 @@ body {
     padding: 10px 20px;
   }
   .image {
-    position: relative;
-    right: -20%;
+    img {
+      position: relative;
+      margin-right: -10%;
+    }
   }
   .written-content {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 12px;
+    padding: 40px 12px;
     margin-right: 12px;
     margin-left: 12px;
   }
@@ -152,11 +159,12 @@ body {
     text-align: center;
   }
 }
+
 .shorten-link {
   margin-top: -75px;
   background: url("../images/bg-shorten-desktop.svg"), $VeryDarkViolet;
   background-size: cover;
-  padding: 50px 50px 50px 50px;
+  padding: 50px;
   border-radius: 8px;
   .s1 {
     display: inline-block;
@@ -182,7 +190,7 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    text-align: center;
+
     width: 10%;
     float: right;
     &:hover {
@@ -384,6 +392,120 @@ body {
       background-image: url("../images/icon-instagram.svg");
       &:hover {
         background-image: url("../images/icon-instagram-cyan.svg");
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .Navbar {
+    .user {
+      display: none;
+    }
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    .image {
+      order: 1;
+      img {
+        position: relative;
+      }
+    }
+    .written-content {
+      order: 2;
+      max-width: 100%;
+      margin-bottom: 48px;
+    }
+  }
+  .shorten-link {
+    // background: url("../images/bg-shorten-mobile.svg"), $VeryDarkViolet;
+    // background-size: cover;
+    .s1 {
+      box-sizing: border-box;
+      width: 100%;
+      padding-bottom: 16px;
+      input {
+        box-sizing: border-box;
+      }
+    }
+    .div-btn {
+      box-sizing: border-box;
+      float: none;
+      width: 100%;
+    }
+  }
+  .cat-2 {
+    grid-template-columns: auto;
+    .card-head {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .line {
+      justify-content: center;
+      div {
+        height: 100px;
+        width: 8px;
+      }
+    }
+    .card-1 {
+      margin-top: 0;
+      text-align: center;
+    }
+    .card-2 {
+      margin-top: 0;
+      text-align: center;
+    }
+    .card-3 {
+      margin-top: 0;
+      text-align: center;
+    }
+  }
+  .new-link {
+    box-sizing: border-box;
+    padding: 0px;
+    margin-top: 24px;
+    .new-link-2 {
+      padding: 16px 16px 8px 16px;
+      border-bottom: solid;
+      border-width: 1px;
+      border-color: rgb(211, 211, 211);
+    }
+    .new-link-1 {
+      padding: 8px 16px 16px 16px;
+      float: none;
+    }
+    .new-link-div {
+      display: block;
+      padding-right: 0px;
+      padding-bottom: 4px;
+    }
+    .new-link-btn {
+      box-sizing: border-box;
+      display: block;
+      width: 100%;
+      padding: 8px;
+    }
+    .div-copied {
+      box-sizing: border-box;
+      display: block;
+      width: 100%;
+      padding: 8px;
+    }
+  }
+  .section-3 {
+    grid-template-columns: auto;
+    text-align: center;
+
+    .menus {
+      grid-template-columns: auto;
+      margin: 36px 0px;
+      ul {
+        margin-bottom: 36px;
+        padding: 0;
       }
     }
   }

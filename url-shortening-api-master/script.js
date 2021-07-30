@@ -13,7 +13,7 @@ createLink = (link, list, id) => {
 
   let childdiv1 = document.createElement("div");
   childdiv1.textContent = link.original;
-  //childdiv1.classList.add("new-link-1");
+  childdiv1.classList.add("new-link-2");
 
   let childdiv = document.createElement("div");
   childdiv.classList.add("new-link-1");
@@ -31,8 +31,8 @@ createLink = (link, list, id) => {
 
   childdiv.appendChild(textdiv);
   childdiv.appendChild(btndiv);
-  maindiv.appendChild(childdiv);
   maindiv.appendChild(childdiv1);
+  maindiv.appendChild(childdiv);
   list.appendChild(maindiv);
 };
 window.onload = loadList;
