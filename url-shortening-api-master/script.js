@@ -122,12 +122,31 @@ shorten = async () => {
       const error = document.querySelector(".error-message");
       error.style.display = "block";
 
-      console.log(err);
+      //console.log(err);
     });
   btntext.textContent = "Shorten it!";
   loader.style.display = "none";
 
   // console.log("shorten link");
+};
+
+const showmenus = (parent) => {
+  const menu = document.querySelector(".nav-options");
+  const dis = menu.style.display;
+
+  const ele = parent.querySelectorAll("div");
+  //console.log(ele);
+  if (dis == "block") {
+    for (let i = 0; i < ele.length; i++) {
+      ele[i].style.backgroundColor = "hsl(0, 0%, 75%)";
+    }
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "block";
+    for (let i = 0; i < ele.length; i++) {
+      ele[i].style.backgroundColor = "hsl(260, 8%, 14%)";
+    }
+  }
 };
 
 getStarted = () => {
