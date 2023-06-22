@@ -1,0 +1,206 @@
+/* include thr roboto font */
+
+@font-face {
+  font-family: Roboto;
+  src: url(./assets/fonts/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: RobotoBold;
+  src: url(./assets/fonts/Roboto-Bold.ttf);
+}
+
+body {
+  background-color: hsl(235, 18%, 26%);
+  color: hsl(234, 29%, 20%);
+  font-family: Roboto;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: hsl(0, 0%, 100%);
+  padding: 1%;
+  border: 0 solid;
+  border-radius: 24px;
+  min-width: 60%;
+}
+
+.inner-container {
+  display: flex;
+}
+.text-container {
+  padding: 10% 5%;
+  min-width: 45%;
+}
+.heading {
+  font-size: 48px;
+  font-family: RobotoBold;
+}
+.sub-text {
+  padding: 5% 0;
+}
+.sign-up {
+  padding: 5% 0;
+}
+.email-heading {
+  font-family: RobotoBold;
+}
+.sign-up-image {
+  background: url("./assets/images/illustration-sign-up-desktop.svg") no-repeat;
+  background-size: cover;
+  min-height: 100%;
+  min-width: 45%;
+  border: 0 solid;
+  border-radius: 20px;
+}
+.small-tick {
+  margin-right: 20px;
+}
+.list-items {
+  display: flex;
+  padding: 2px 0;
+}
+.input {
+  color: hsl(234, 29%, 20%);
+  font-size: 16px;
+  font-family: Roboto;
+  margin-top: 2%;
+  width: 90%;
+  padding: 4%;
+  border: 2px solid hsl(234, 29%, 20%);
+  border-radius: 10px;
+}
+.input2 {
+  font-size: 16px;
+  font-family: Roboto;
+  color: hsl(4, 100%, 67%);
+  background-color: hsla(4, 94%, 80%, 0.11);
+  margin-top: 2%;
+  width: 90%;
+  padding: 4%;
+  border: 2px solid hsl(4, 100%, 67%);
+  border-radius: 10px;
+}
+input:focus,
+:active {
+  outline: none;
+}
+.button {
+  margin-top: 5%;
+  width: 90%;
+  background-color: hsl(234, 29%, 20%);
+  text-align: center;
+  padding: 4%;
+  border: 0 solid;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+.button:hover {
+  background: linear-gradient(to right, hsl(347, 100%, 65%), hsl(4, 95%, 63%));
+}
+.c2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: hsl(0, 0%, 100%);
+  padding: 5%;
+  border: 0 solid;
+  border-radius: 24px;
+}
+.b2 {
+  margin-top: 5%;
+  width: 90%;
+  background-color: hsl(234, 29%, 20%);
+  text-align: center;
+  padding: 4%;
+  border: 0 solid;
+  border-radius: 10px;
+  color: white;
+  min-width: 40%;
+  cursor: pointer;
+}
+.b2:hover {
+  background: linear-gradient(to right, hsl(347, 100%, 65%), hsl(4, 95%, 63%));
+}
+.mb {
+  display: inline-block;
+  font-family: RobotoBold;
+}
+.sb {
+  margin-top: 2%;
+}
+.tick {
+  margin-bottom: 2%;
+}
+.error {
+  color: hsl(4, 100%, 67%);
+}
+.formheading {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    position: static;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    min-width: 90%;
+    padding: 0;
+  }
+  .c2 {
+    position: static;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    min-width: 90%;
+  }
+  body {
+    margin: 5%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    margin: 0;
+    background-color: white;
+  }
+  .text-container {
+    min-width: 90%;
+  }
+  .inner-container {
+    padding: 5%;
+  }
+  .sign-up-image {
+    min-width: 0;
+  }
+  .c2 {
+    background-color: hsl(0, 0%, 100%);
+    padding: 10% 5%;
+    border: 0 solid;
+    border-radius: 24px;
+  }
+  .sb {
+    margin-top: 10%;
+  }
+  .tick {
+    margin-bottom: 10%;
+  }
+  .b2 {
+    margin-top: 10%;
+  }
+  .mobile-image {
+    background: url("./assets/images/illustration-sign-up-mobile.svg") no-repeat;
+    background-size: cover;
+    min-height: 50vh;
+    min-width: 100%;
+    border: 0 solid;
+    border-radius: 0 0 24px 24px;
+    margin: 0;
+  }
+}
