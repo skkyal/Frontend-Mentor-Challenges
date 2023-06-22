@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL:
+- Solution URL: https://www.frontendmentor.io/solutions/newsletter-signup-form-using-react-Old7AIkgz3
 - Live Site URL: https://newsletter-signup-shlok.netlify.app/
 
 ## My process
