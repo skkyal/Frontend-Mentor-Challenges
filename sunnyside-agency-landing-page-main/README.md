@@ -23,7 +23,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL:
+- Solution URL: https://www.frontendmentor.io/solutions/basic-landing-page-responsive-css-QIXym5iGxo
 - Live Site URL: https://shlok-sunnyside-app.netlify.app
 
 ## My process
